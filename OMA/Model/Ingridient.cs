@@ -8,7 +8,7 @@ namespace OrderMakingApp
 {
     public class Ingridient
     {
-        public string Name { get; private set; }
+        public string Name { get; private set; } 
         public Ingridient(string name)
         {
             Name = name;
