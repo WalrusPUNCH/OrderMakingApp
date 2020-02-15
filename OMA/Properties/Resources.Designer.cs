@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace OMA.Properties
+namespace OrderMakingApp.Properties
 {
 
 
