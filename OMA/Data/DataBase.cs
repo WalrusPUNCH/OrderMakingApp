@@ -11,13 +11,13 @@ namespace OrderMakingApp
         public List<Cook> GetCooks()
         {
             List<Cook> cooks = new List<Cook>()
-            {
-                new Cook(Qualification.Junior, Specialization.American),
-                new Cook(Qualification.Senior, Specialization.American),
-
+            {               
                 new Cook(Qualification.Junior, Specialization.European),
                 new Cook(Qualification.Middle, Specialization.European),
                 new Cook(Qualification.Senior, Specialization.European),
+
+                new Cook(Qualification.Junior, Specialization.American),
+                new Cook(Qualification.Senior, Specialization.American),
 
                 new Cook(Qualification.Middle, Specialization.Asian),
                 new Cook(Qualification.Senior, Specialization.Asian)
@@ -64,7 +64,7 @@ namespace OrderMakingApp
                 new Ingridient("Spices")
             };
 
-            dishes.Add(new Dish("French fries", Specialization.American, new TimeSpan(0, 10, 0), 300, ingridients));
+            dishes.Add(new Dish("French Fries", Specialization.American, new TimeSpan(0, 10, 0), 300, ingridients));
 
             ingridients = new List<Ingridient>()
             {
@@ -81,7 +81,7 @@ namespace OrderMakingApp
                 new Ingridient("Spices")
             };
 
-            dishes.Add(new Dish("Chicken curry", Specialization.Asian, new TimeSpan(1, 5, 0), 750, ingridients));
+            dishes.Add(new Dish("Chicken Curry", Specialization.Asian, new TimeSpan(1, 5, 0), 750, ingridients));
 
             return dishes;
         }

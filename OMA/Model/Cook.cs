@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderMakingApp
 {
-    public class Cook
+    public class Cook : IComparable
     {
         public readonly Qualification Qualification_;
 
@@ -48,6 +48,37 @@ namespace OrderMakingApp
             else
                 throw new Exception("Cook doesn't have specialization for this dish");
 
+        }
+
+        int IComparable.CompareTo(object obj)
+        {
+            Cook that = obj as Cook;
+            if (this.EndOfWorkTime.Date != that.EndOfWorkTime.Date)
+                return this.EndOfWorkTime.Date.CompareTo(that.EndOfWorkTime.Date); // this буде перед that в списку
+            else
+            {
+                if (this.EndOfWorkTime.Hour != that.EndOfWorkTime.Hour)
+                    return this.EndOfWorkTime.Hour.CompareTo(that.EndOfWorkTime.Hour);
+                else
+                {
+                    if (this.EndOfWorkTime.Minute != that.EndOfWorkTime.Minute)
+                        return this.EndOfWorkTime.Minute.CompareTo(that.EndOfWorkTime.Minute);
+                    else
+                    {
+                        if (this.EndOfWorkTime.Second != that.EndOfWorkTime.Second)
+                            return this.EndOfWorkTime.Second.CompareTo(that.EndOfWorkTime.Second);
+                        else
+                        {
+                            int this_bonus = (int)((Qualification)Enum.Parse(typeof(Qualification), this.Qualification_.ToString()));
+                            int that_bonus = (int)((Qualification)Enum.Parse(typeof(Qualification), that.Qualification_.ToString()));
+                            if (this_bonus > that_bonus)
+                                return -1;
+                            else
+                                return 1;
+                        }
+                    }
+                }
+            }
         }
     }
 }

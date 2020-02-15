@@ -8,6 +8,8 @@ namespace OrderMakingApp
 {
     static class Program
     {
+        public static ApplicationContext _context = new ApplicationContext();
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -16,7 +18,9 @@ namespace OrderMakingApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new MainForm());
+            var presenter = new Presenter(new MainForm(), new Kitchen());
+            presenter.Run();
+            //Application.Run(new MainForm());
         }
     }
 }

@@ -52,6 +52,13 @@
     <Compile Include="Data\DataBase.cs" />
     <Compile Include="Model\Dish.cs" />
     <Compile Include="Data\IDataBase.cs" />
+    <Compile Include="Model\IModel.cs" />
+    <Compile Include="OrderedDishesEventArgs.cs" />
+    <Compile Include="OrderEventArgs.cs" />
+    <Compile Include="Presenter\IPresenter.cs" />
+    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="View\IMainView.cs" />
+    <Compile Include="View\IView.cs" />
     <Compile Include="View\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
