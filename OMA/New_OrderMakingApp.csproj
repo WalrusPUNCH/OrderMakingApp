@@ -56,7 +56,7 @@
     <Compile Include="OrderedDishesEventArgs.cs" />
     <Compile Include="OrderEventArgs.cs" />
     <Compile Include="Presenter\IPresenter.cs" />
-    <Compile Include="Presenter\Presenter.cs" />
+    <Compile Include="Presenter\MainPresenter.cs" />
     <Compile Include="View\IMainView.cs" />
     <Compile Include="View\IView.cs" />
     <Compile Include="View\MainForm.cs">

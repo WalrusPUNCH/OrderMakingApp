@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OrderMakingApp
 {
-    class Presenter : IPresenter
+    class MainPresenter : IPresenter
     {
         IMainView view;
         IModel model;
-        public Presenter(IMainView _view, IModel _model)
+        public MainPresenter(IMainView _view, IModel _model)
         {
             view = _view;
             model = _model;

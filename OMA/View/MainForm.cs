@@ -55,9 +55,9 @@ namespace OrderMakingApp
         public void ShowMessage(string text, MessageType type)
         {
             if (type == MessageType.Error)
-                MessageBox.Show(text, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(text, "Помилка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else if (type == MessageType.Information)
-                MessageBox.Show(text, "Информация о заказе", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show(text, "Інформація про замовлення", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
     }
