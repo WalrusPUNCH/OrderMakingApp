@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OrderMakingApp
 {
-    interface IDataBase
+    public interface IDataBase
     {
         List<Cook> GetCooks();
         List<Dish> GetMenu();

@@ -18,7 +18,7 @@ namespace OrderMakingApp
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            var presenter = new MainPresenter(new MainForm(), new Kitchen());
+            var presenter = new MainPresenter(new MainForm(), new Kitchen(new DataBase()));
             presenter.Run();
             //Application.Run(new MainForm());
         }
