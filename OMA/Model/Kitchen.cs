@@ -3,20 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace OrderMakingApp
 {
     public class Kitchen : IModel
     {
         public event EventHandler<OrderEventArgs> OrderConfirmed = delegate { };
-        private readonly IDataBase @base;
+        private readonly IDataLayer dataAccess;
         List<Cook> Cooks = new List<Cook>();
         private List<Dish> Menu { get; set; } = new List<Dish>();
-        public Kitchen(IDataBase dataBase)
+        public Kitchen(IDataLayer data)
         {
-            @base = dataBase; 
-            Cooks = @base.GetCooks();
-            Menu = @base.GetMenu();
+            dataAccess = data;
+
+            Menu = dataAccess.GetItems<Dish>().ToList();
+            Cooks = dataAccess.GetItems<Cook>().ToList();
+
+           // Cooks = @base.GetCooks();
+           // Menu = @base.GetMenu();
         }
 
         public void ConfirmOrder(List<string> DishNamesToCook)

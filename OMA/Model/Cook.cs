@@ -3,23 +3,29 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
 namespace OrderMakingApp
 {
     public class Cook : IComparable
     {
-        public readonly Qualification Qualification_;
+        [JsonPropertyAttribute]
+        public Qualification Qualification_ { get; private set; }
 
-        public readonly Specialization Specialization_;
+        [JsonPropertyAttribute]
+        public Specialization Specialization_ { get; private set; }
 
-        public DateTime EndOfWorkTime { get; private set; }
+        [JsonPropertyAttribute]
+        public DateTime EndOfWorkTime { get; private set; } = DateTime.Now;
 
+        [JsonPropertyAttribute]
         public List<Dish> Queue { get; private set; } = new List<Dish>();
         public Cook(Qualification qualification, Specialization spec)
         {
             Qualification_ = qualification;
             Specialization_ = spec;
-            EndOfWorkTime = DateTime.Now;
+           // EndOfWorkTime = DateTime.Now;
         }
 
         private bool CanCookDish(Dish dish)

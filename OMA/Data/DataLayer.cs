@@ -3,11 +3,27 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Configuration;
 
 namespace OrderMakingApp
 {
-    class DataBase : IDataBase
+    class DataLayer : IDataLayer
     {
+        IDeserialize serializer;
+
+        public DataLayer(IDeserialize serializer_)
+        {
+            this.serializer = serializer_;
+        }
+
+        public IEnumerable<T> GetItems<T>()
+        {
+            Type type = typeof(T);
+            string path = ConfigurationSettings.AppSettings[type.Name];
+            return serializer.Deserialize<T>(path);
+        }
+
+        /*
         public List<Cook> GetCooks()
         {
             List<Cook> cooks = new List<Cook>()
@@ -25,7 +41,6 @@ namespace OrderMakingApp
 
             return cooks;
         }
-
         public List<Dish> GetMenu()
         {
 
@@ -85,5 +100,6 @@ namespace OrderMakingApp
 
             return dishes;
         }
+        */
     }
 }

@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace OrderMakingApp
 {
-    public interface IDataBase
+    public interface IDataLayer
     {
-        List<Cook> GetCooks();
-        List<Dish> GetMenu();
+        IEnumerable<T> GetItems<T>();
     }
 }

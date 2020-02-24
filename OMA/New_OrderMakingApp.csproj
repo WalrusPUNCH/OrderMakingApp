@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -46,17 +49,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilities\Container.cs" />
+    <Compile Include="Data\ISerializer.cs" />
+    <Compile Include="Data\JsonSerializer.cs" />
     <Compile Include="Model\Cook.cs" />
     <Compile Include="Model\CookQualifications.cs" />
     <Compile Include="Model\CookSpecializations.cs" />
-    <Compile Include="Data\DataBase.cs" />
+    <Compile Include="Data\DataLayer.cs" />
     <Compile Include="Model\Dish.cs" />
-    <Compile Include="Data\IDataBase.cs" />
+    <Compile Include="Data\IDataLayer.cs" />
     <Compile Include="Model\IModel.cs" />
-    <Compile Include="OrderedDishesEventArgs.cs" />
-    <Compile Include="OrderEventArgs.cs" />
-    <Compile Include="Presenter\IPresenter.cs" />
-    <Compile Include="Presenter\MainPresenter.cs" />
+    <Compile Include="Utilities\OrderedDishesEventArgs.cs" />
+    <Compile Include="Utilities\OrderEventArgs.cs" />
+    <Compile Include="View\Presenter\IPresenter.cs" />
+    <Compile Include="View\Presenter\MainPresenter.cs" />
     <Compile Include="View\IMainView.cs" />
     <Compile Include="View\IView.cs" />
     <Compile Include="View\MainForm.cs">
@@ -82,6 +88,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\OrderMakingApp.Dish.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
