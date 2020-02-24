@@ -33,7 +33,7 @@ namespace OrderMakingApp
         public void Configure()
         {
             Register<IMainView, MainForm>();
-            Register<IMainPresenter, MainPresenter>();
+            Register<IPresenter, MainPresenter>();
             Register<IModel, Kitchen>();
             Register<IDataLayer, DataLayer>();
             Register<ISerialize, JsonSerializer>();
