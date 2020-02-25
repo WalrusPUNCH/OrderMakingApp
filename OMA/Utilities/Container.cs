@@ -30,14 +30,5 @@ namespace OrderMakingApp
             return defConstructor.Invoke(parameters);
         }
 
-        public void Configure()
-        {
-            Register<IMainView, MainForm>();
-            Register<IPresenter, MainPresenter>();
-            Register<IModel, Kitchen>();
-            Register<IDataLayer, DataLayer>();
-            Register<ISerialize, JsonSerializer>();
-            Register<IDeserialize, JsonSerializer>();
-        }
     }
 }

@@ -21,7 +21,12 @@ namespace OrderMakingApp
 
             var container = new Container();
 
-            container.Configure();
+            container.Register<IMainView, MainForm>();
+            container.Register<IPresenter, MainPresenter>();
+            container.Register<IModel, Kitchen>();
+            container.Register<IDataLayer, DataLayer>();
+            container.Register<ISerialize, JsonSerializer>();
+            container.Register<IDeserialize, JsonSerializer>();
 
             container.Create<IPresenter>().Run();
         }
